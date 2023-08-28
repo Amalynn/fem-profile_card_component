@@ -1,0 +1,200 @@
+/* -------------------------------------- */
+/* CSS custome properties */
+
+:root {
+    --clr-primary-bg: hsl(185, 75%, 39%);
+    --clr-primary-accent: hsl(229, 23%, 23%);
+    --clr-primary: hsl(227, 10%, 46%);
+    --clr-neutral: hsl(0, 0%, 59%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    --ff-base: 'Kumbh Sans', sans-serif;    
+    --font-size-base: 18px; 
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+}
+
+/* -------------------------------------- */
+/* Reset */
+/* CSS Reset from Josh Comeau https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+ 
+* {
+margin: 0;
+padding: 0;
+}
+
+body {
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+
+input, button, textarea, select {
+font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+
+
+/* ------------------------------------------ */
+/* Utilities */
+
+.flex-group-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.font-accent {
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary-accent);    
+}
+
+.font-age {
+    color: var(--clr-primary);
+    font-weight: var(--fw-regular);
+    margin-left: 0.4rem;
+}
+
+.font-media-social-category {
+    font-weight: var(--fw-regular);
+    font-size: 0.625rem;
+    letter-spacing: 1.5px;
+    color: var(--clr-primary);
+}
+
+
+/* ------------------------------------------ */
+/* General styling */
+
+body {
+    background-color: var(--clr-primary-bg);
+    font-family: var(--ff-base);
+    font-size: var(--font-size-base);
+    font-weight: var(--fw-regular) ;
+    color: var(--clr-primary);
+    overflow: hidden;
+
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    margin: 1.5625rem;
+
+    background-image: url(./images/bg-pattern-top.svg), url(./images/bg-pattern-bottom.svg);  
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top left;
+    background-position: top -550px left -800px, bottom -550px right -720px; 
+    
+}
+
+@media only screen and ( min-width: 680px) {
+    body {
+        background-position: top -400px left -340px, bottom -670px right -150px;
+    }
+    
+}
+
+
+/* ------------------------------------------------- */
+/* Card */
+
+.card {
+    min-width: 20.375rem;
+    background-color: var(--clr-white);
+    border-radius: 1rem;
+    overflow: hidden;
+    border: none;
+}
+
+@media only screen and (width >= 1201px) {
+    .card {
+        width: 21.875rem;
+    }    
+}
+
+
+/* --------------------------------------------------- */
+/* Card Header */
+
+.card__header {
+    width: 100%;
+    height: 8.75rem;
+    background-image: url("images/bg-pattern-card.svg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.card__header-avatar {    
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    border: 5px solid var(--clr-white);
+    transform: translateY(48px);
+}
+
+.card__header-avatar img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;    
+}
+
+
+/* --------------------------------------------------- */
+/* Card Body */
+
+.card__body {    
+    text-align: center;  
+    padding:  4.5rem 0 1.75rem 0;
+    line-height: 1.7;
+}
+
+.card__body h2 {
+    font-size: var(--font-size-base);    
+}
+
+.card__body h3 {
+    font-size: 0.875rem;
+    font-weight: var(--fw-regular);
+}
+
+
+/* -------------------------------------- */
+/* Card Footer */
+
+.card__footer {
+    display: flex;    
+    padding: 1.6875rem 3.25rem;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(151,151, 151, 0.25) ;    
+}
+
+
+/* ---------------------------------------- */
+/* Attribution */
+
+.attribution {
+     font-size: 0.6875rem;
+      text-align: center; 
+      color: black;
+      margin-top: 1rem;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
